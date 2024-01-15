@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Review</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Brush+Script+MT&display=swap">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: left;
+            background-image: url('vote5.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            background-color: #B37A4C;
+            color: #fff;
+            padding: 2px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        header img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 0 10px 10px 0;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+	    margin-top: 30px;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-icon span {
+            margin-right: 5px;
+        }
+
+       .logout-option {
+            display: none;
+            position: absolute;
+            top: 80px; /* Adjusted position */
+            right: 20px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .logout-option a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        h1 {
+            margin-top: 90px;
+            margin-bottom: 1px;
+            color: #fff;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 40px;
+        }
+h2 {
+            text-align: center; /* Align the h3 to the center */
+            
+    	    color:#fff;
+        }
+
+        .row {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+}
+
+.candidate, .candidate2, .candidate3 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+}
+
+.candidate-profile {
+    max-width: 120px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.candidate-details span {
+    display: flex; /* Prevent text from wrapping */
+}
+
+
+        label {
+            align-items: center;
+            margin-bottom: 10px;
+            width: 40%;
+        }
+
+        
+        label span {
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 7px;
+            background-image: url('cont.png');
+            background-size: cover;
+            background-position: center;
+    		line-height: 1.5;
+        }
+
+     
+
+
+.container2 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 80%; /* Adjusted width */
+    text-align: center;
+    padding: 10px 0;
+    margin-top: -10px;
+    margin-left: 10%; /* Adjusted margin-left */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+        .container2 button {
+            background-color: #B37A4C;
+            color: #fff;
+            border: coral;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container2 button:hover {
+            background-color: #8B4513;
+        }
+
+footer {
+            background-color: #B37A4C;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .topnav {
+            margin-top: 40px;
+            text-align: center;
+            margin-left:680px;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav-right {
+            float: left;
+        }
+
+ </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logoumt.png" alt="Logo">
+
+        <div class="topnav">
+            <div class="topnav-right">
+                <a href="homepage.html">Home</a>
+                <a href="register.html">Registration</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-icon" onclick="toggleLogoutOption()">
+                <span>&#128100;</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="logout-option" id="logoutOption">
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Vote Casting</h1>
+	<h2>REVIEW VOTING</h2>
+
+    <div class="row">
+        <div class="column">
+            <form>
+                <label>
+                    <div class="candidate">
+                        <img class="candidate-profile" src="no13.jpg" alt="profil">
+                        <div class="candidate-details">
+                            <span>NAME: AZRAN SHABIL SALLEH<br>CANDIDATE NO: C13<br>FACULTY: FAKULTI SAINS KOMPUTER DAN MATEMATIK<br>MANIFESTO: MENGADAKAN LAWATAN RUMAH KE RUMAH UNTUK MENJAGA KEBAJIKAN PELAJAR LUAR KOLEJ</span>
+                        </div>
+                    </div>
+                </label>
+            </form>
+            
+            <form>
+                <label>
+                    <div class="candidate2">
+                        <img class="candidate-profile" src="no2.jpg" alt="profil">
+                        <div class="candidate-details">
+                            <span>NAME: NURIN SYAUQINA BINTI KAMARUL ARIFIN<br>CANDIDATE NO: C2<br>FACULTY: FAKULTI PENGAJIAN MARITIM<br>MANIFESTO: MEMUPUK SIKAP KEPIMPINAN DI KALANGAN PELAJAR</span>
+                        </div>
+                    </div>
+                </label>
+            </form>
+        </div>
+        
+        <div class="column">
+            <form>
+                <label>
+                    <div class="candidate3">
+                        <img class="candidate-profile" src="calon3.jpg" alt="profil">
+                        <div class="candidate-details">
+                            <span>NAME: SAKINAH BINTI JUSOH<br>CANDIDATE NO: C8<br>FACULTY:FAKULTI SAINS KOMPUTER DAN MATEMATIK<br>MANIFESTO: MENYEDIAKAN WAKAF BOOK CENTER DAN FOODBANK</span>
+                        </div>
+                    </div>
+                </label>
+            </form>
+        </div>
+    </div>
+    
+    
+
+    <div class="container2">
+        <button onclick="myFunction()">Submit</button>
+    </div>
+
+ <footer>
+        &copy; 2023 MarFaRa Company
+    </footer>
+
+<script>
+        function toggleLogoutOption() {
+            var logoutOption = document.getElementById("logoutOption");
+            logoutOption.style.display = (logoutOption.style.display === "block") ? "none" : "block";
+        }
+</script>
+</body>
+
+</html>

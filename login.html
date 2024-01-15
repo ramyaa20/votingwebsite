@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+	min-height: 100vh;
+            background-image: url('vote5.png'); /* Replace with the path to your background image */
+            background-size: cover; /* Adjust the background size */
+            body {
+    background-attachment: fixed;
+} 
+        }
+
+        header {
+            background-color: #B37A4C;
+            color: #fff;
+            padding: 2px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align items to each end of the header */
+        }
+
+        header img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 0 10px 10px 0; /* Adjust margin for better spacing */
+        }
+
+       .profile-container {
+            display: flex;
+            align-items: center;
+	    margin-top: 30px;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-icon span {
+            margin-right: 5px;
+        }
+
+       .logout-option {
+            display: none;
+            position: absolute;
+            top: 80px; /* Adjusted position */
+            right: 20px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .logout-option a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #fff; /* Set text color for better visibility against the background */
+        }
+
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change the font for "Sign in to continue" */
+            font-weight: normal; /* Set font weight to normal */
+            margin-top: 10px; /* Add some top margin for spacing */
+            color: #fff; /* Set text color for better visibility against the background */
+        }
+
+        footer {
+            background-color: #B37A4C;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+ .topnav {
+            margin-top: 40px;
+            text-align: center;
+            margin-left:680px;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav-right {
+            float: left;
+        }
+
+        .container {
+    position: relative;
+    width: 30%;
+    margin: 50px auto 20px; /* Add margin to the top (50px) and bottom (20px) */
+    text-align: center; /* Center the container */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+        form {
+            text-align: left; /* Left-align the content inside the container */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: calc(100% - 16px); /* Adjusted width to allow for padding */
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #8B4513;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logoumt.png" alt="Logo">
+
+        <div class="topnav">
+            <div class="topnav-right">
+                <a href="homepage.html">Home</a>
+                <a href="register.html">Registration</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-icon" onclick="toggleLogoutOption()">
+                <span>&#128100;</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="logout-option" id="logoutOption">
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Login</h1>
+    <h2>Sign in to continue</h2>
+    <div class="container">
+        <form action="login_process.php" method="post" onsubmit="return redirectToHomepage()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="pass" name="password" minlength="8" required>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2023 MarFaRa Company
+    </footer>
+
+    <script>
+        function toggleLogoutOption() {
+            var logoutOption = document.getElementById("logoutOption");
+            logoutOption.style.display = (logoutOption.style.display === "block") ? "none" : "block";
+        }
+	function redirectToHomepage() {
+        // You can add any additional logic or validation here before redirecting
+        window.location.href = "homepage.html";
+        return false; // prevent the form from submitting
+    }
+    </script>
+</body>
+</html>

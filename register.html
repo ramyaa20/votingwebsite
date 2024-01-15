@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Brush+Script+MT&display=swap">
+
+    <style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+min-height: 100vh;
+            box-sizing: border-box;
+            text-align: left;
+            background-image: url('vote5.png');
+            background-size: cover;
+            body {
+    background-attachment: fixed;
+}
+        }
+
+        header {
+            background-color: #B37A4C;
+            color: #fff;
+            padding: 2px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        header img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 0 10px 10px 0;
+        }
+
+       .profile-container {
+            display: flex;
+            align-items: center;
+	    margin-top: 30px;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-icon span {
+            margin-right: 5px;
+        }
+
+       .logout-option {
+            display: none;
+            position: absolute;
+            top: 80px; /* Adjusted position */
+            right: 20px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .logout-option a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        h1 {
+            margin-top: 90px;
+            margin-bottom: 1px;
+            color: #fff;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 40px;
+        }
+
+        footer {
+            background-color: #B37A4C;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+       .topnav {
+            margin-top: 40px;
+            text-align: center;
+            margin-left:680px;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav-right {
+            float: left;
+        }
+
+        .registration-form {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .form-row label,
+        .form-row select,
+        .form-row input,
+        .form-row textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-row button {
+            width: auto;
+            padding: 10px;
+            margin-left: 70px;
+            margin-top: 10px;
+            background-color: #B37A4C;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-row button:active {
+            background-color: #A0522D;
+            box-shadow: 0 0 10px #A0522D;
+        }
+
+        .form-row textarea {
+            resize: vertical;
+            width: 300%;
+        }
+
+        .form-row .file-upload {
+            background-color: #80471C;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            width: 300%;
+            box-shadow: 0 0 10px #80471C;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px #80471C;
+            }
+            50% {
+                box-shadow: 0 0 20px #DAA520;
+            }
+            100% {
+                box-shadow: 0 0 10px #D2B48C;
+            }
+        }
+
+        .options {
+            display: none;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Notification box styles */
+        .notification-container {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 15px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .notification-container p {
+            margin: 0;
+        }
+
+        .notification-container button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #80471C;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+	.topnav a.active {
+    background-color: #8B4513; /* Set the background color to your desired glow color */
+    color: #fff; /* Set the text color to your desired glow color */
+    box-shadow: 0 0 10px #8B4513, 0 0 20px #8B4513, 0 0 30px #8B4513; /* Glow effect */
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logoumt.png" alt="Logo">
+
+        <div class="topnav">
+            <div class="topnav-right">
+                <a href="homepage.html">Home</a>
+                <a href="register.html" class="active">Registration</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-icon" onclick="toggleLogoutOption()">
+                <span>&#128100;</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="logout-option" id="logoutOption">
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+            <div class="options">
+                <label for="faculty">Faculty:</label>
+                <select id="faculty" name="faculty" required>
+                    <option value="">Select Faculty</option>
+                    <option value="FTKKI">FTKKI</option>
+                    <option value="FSSM">FSSM</option>
+                    <option value="FPM">FPM</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <label for="position">Position:</label>
+                <select id="position" name="position" required>
+                    <option value="">Select Position</option>
+                    <option value="MPP">MPP</option>
+                    <option value="JPKK">JPKK</option>
+                    <option value="JPLK">JPLK</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="logout-option" id="logoutOption">
+        <a href="#">Logout</a>
+    </div>
+
+    <h1>Registration</h1>
+
+    <!-- Registration Form -->
+    <div class="registration-form">
+        <form>
+            <div class="form-row">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="mobile" style="margin-left: 20px;">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+
+            <div class="form-row">
+                <label for="faculty">Faculty:</label>
+                <select id="faculty" name="faculty" required>
+                    <option value="">Select Faculty</option>
+                    <option value="FTKKI">FTKKI</option>
+                    <option value="FSSM">FSSM</option>
+                    <option value="FPM">FPM</option>
+                    <!-- Add more options as needed -->
+                </select>
+
+                <label for="position" style="margin-left: 20px;">Position:</label>
+                <select id="position" name="position" required>
+                    <option value="">Select Position</option>
+                    <option value="MPP">MPP</option>
+                    <option value="JPKK">JPKK</option>
+                    <option value="JPLK">JPLK</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="manifesto">Manifesto:</label>
+                <textarea id="manifesto" name="manifesto" placeholder="Enter your manifesto" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <label for="imageUpload">Upload Image:</label>
+                <div class="file-upload" onclick="document.getElementById('imageUpload').click()">Choose File</div>
+                <input type="file" id="imageUpload" name="imageUpload" style="display: none;">
+            </div>
+            <div class="form-row" style="text-align: center;">
+                <button type="button" onclick="register()">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Notification box for Registration Success -->
+    <div id="registrationNotification" class="notification-container">
+        <p>Registration Successful!</p>
+        <button onclick="closeNotification()">OK</button>
+    </div>
+
+    <footer>
+        &copy; 2023 MarFaRa Company
+    </footer>
+
+    <script>
+        function toggleLogoutOption() {
+            var logoutOption = document.getElementById("logoutOption");
+            logoutOption.style.display = (logoutOption.style.display === "block") ? "none" : "block";
+        }
+
+        function toggleOptions() {
+            var options = document.querySelector('.options');
+            options.style.display = (options.style.display === 'block') ? 'none' : 'block';
+        }
+
+       function closeNotification() {
+    var notification = document.getElementById('registrationNotification');
+    notification.style.display = 'none';
+
+    // Refresh the page
+    window.location.href = window.location.href;
+}
+
+        function register() {
+            // Your registration logic here
+
+            // Show the registration notification
+            var notification = document.getElementById('registrationNotification');
+            notification.style.display = 'block';
+        }
+	document.addEventListener("DOMContentLoaded", function () {
+    var currentPage = window.location.pathname.split("/").pop(); // Get the current page name
+
+    // Remove "active" class from all links initially
+    var navLinks = document.querySelectorAll(".topnav a");
+    navLinks.forEach(function (link) {
+        link.classList.remove("active");
+    });
+
+    // Add "active" class to the current page link
+    var currentLink = document.querySelector('.topnav a[href="' + currentPage + '"]');
+    if (currentLink) {
+        currentLink.classList.add("active");
+    }
+});
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+

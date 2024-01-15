@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote Casting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Brush+Script+MT&display=swap">
+
+    <style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+min-height: 100vh;
+            box-sizing: border-box;
+            text-align: left;
+            background-image: url('vote5.png');
+            background-size: cover;
+            
+    background-attachment: fixed;
+
+		 overflow-x: hidden;
+        }
+	@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+        header {
+            background-color: #B37A4C;
+            color: #fff;
+            padding: 2px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+           
+            width: 100%;
+        }
+
+        header img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 0 10px 10px 0;
+        }
+
+        .topnav {
+            margin-top: 40px;
+            text-align: center;
+            margin-left: 680px;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav-right {
+            float: left;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-icon span {
+            margin-right: 5px;
+        }
+
+        .logout-option {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .logout-option a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+         h1 {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            color: #fff;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: -5px; /* Adjusted margin-top */
+            color: #fff;
+            font-size: 20px; /* Adjusted font-size */
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 40%;
+        }
+
+        .candidate {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            justify-content: flex-start;
+		margin-left: -0px;
+        }
+
+        .candidate-profile {
+            max-height: 110px;
+            margin-right: 20px;
+            width: 100px;
+        }
+
+        input[type="radio"] {
+            margin-left: -35px;
+        }
+
+        label span {
+            margin: 20px 0 20px 20px;
+            padding: 10px;
+            background-image: url('cont.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            width: 400px;
+            height: 90px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            font-size: 14px;
+        }
+
+        .container2 {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: -27px;
+            margin-left: 10%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .container2 button {
+            background-color: #B37A4C;
+            color: #fff;
+            border: coral;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .container2 button:hover {
+            background-color: #8B4513;
+        }
+
+        footer {
+            background-color: #B37A4C;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+           position:fixed;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logoumt.png" alt="Logo">
+
+        <div class="topnav">
+            <div class="topnav-right">
+                <a href="homepage.html">Home</a>
+                <a href="register.html">Registration</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-icon" onclick="toggleLogoutOption()">
+                <span>&#128100;</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="logout-option" id="logoutOption">
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Vote Casting</h1>
+    <h2>E-BALLOT FOR JPKK</h2>
+
+<form id="votingForm">
+    <label>
+        <input type="radio" name="Candidate" value="candidate1">
+        <div class="candidate">
+            <img class="candidate-profile" src="no7.jpg" alt="profil">
+            <span><b>NAME: QISTINA WAFIYYAH BINTI SHAHRUL NIZAM<br>CANDIDATE NO: C7<br>FACULTY:FAKULTI SAINS KOMPUTER DAN MATEMATIK<br>MANIFESTO: PEMBINAAN BUMBUNG UNTUK AMPAIAN LUAR ASRAMA</b></span>
+        </div>
+    </label>
+
+    <label>
+        <input type="radio" name="Candidate" value="candidate2">
+        <div class="candidate">
+            <img class="candidate-profile" src="no8.jpg" alt="profil">
+            <span><b>NAME: SAKINAH BINTI JUSOH<br>CANDIDATE NO: C8<br>FACULTY:FAKULTI SAINS KOMPUTER DAN MATEMATIK<br>MANIFESTO: MENYEDIAKAN WAKAF BOOK CENTER DAN FOODBANK</b></span>
+        </div>
+    </label>
+
+    <label>
+        <input type="radio" name="Candidate" value="candidate3">
+        <div class="candidate">
+            <img class="candidate-profile" src="no9.jpg" alt="profil">
+            <span><b>NAME: MOHAMMAD AIMAN HAKIM BIN ARMAN<br>CANDIDATE NO: C9<br>FACULTY: FAKULTI TEKNOLOGI KEJURUTERAAN KELAUTAN<br>MANIFESTO: MEWUJUDKAN SISTEM E-BOOKING UNTUK MEMUDAHKAN PROSES PEMINJAMAN TEMPAT AKTIVITI</b></span>
+        </div>
+    </label>
+
+    <label>
+        <input type="radio" name="Candidate" value="candidate4">
+        <div class="candidate">
+            <img class="candidate-profile" src="no10.jpg" alt="profil">
+            <span><b>NAME: MUHAMMAD ZEQRI BIN AMIRUDDIN<br>CANDIDATE NO: C10<br>FACULTY:FAKULTI SAINS KOMPUTER DAN MATEMATIK<br>MANIFESTO: MENGURANGKAN HARGA BARANG POS UNTUK MERINGANKAN BEBAN PELAJAR</b></span>
+        </div>
+    </label>
+	
+	<label>
+        <input type="radio" name="Candidate" value="candidate5">
+        <div class="candidate">
+            <img class="candidate-profile" src="no11.jpg" alt="profil">
+            <span><b>NAME: SYARIFAH MALISA ARYUNI BINTI SYED SAHAIMI<br>CANDIDATE NO: C11<br>FACULTY: FAKULTI SAINS DAN SEKITARAN MARIN<br>MANIFESTO: MENGANJURKAN AKTIVITI UNTUK MENGERATKAN SILATURRAHIM DI KALANGAN PELAJAR DI KOLEJ KEDIAMAN</b></span>
+        </div>
+    </label>
+	
+	<label>
+        <input type="radio" name="Candidate" value="candidate6">
+        <div class="candidate">
+            <img class="candidate-profile" src="no12.jpg" alt="profil">
+            <span><b>NAME: SITI NUR SUMAIYYAH BINTI MAT NASIR<br>CANDIDATE NO: C12<br>FACULTY: FAKULTI SAINS DAN SEKITARAN MARIN<br>MANIFESTO: MENGADAKAN AKTIVITI GOTONG ROYONG SECARA BERKALA UNTUK MERAPATKAN SILATURRAHIM DI SAMPING MENGEKALKAN KEBERSIHAN KOLEJ KEDIAMAN</b></span>
+        </div>
+    </label>
+</form>
+
+
+    <div class="container2">
+        <button onclick="goToVoteConfirmPage()">Next</button>
+    </div>
+
+    <footer>
+        &copy; 2023 MarFaRa Company
+    </footer>
+
+    <script>
+        function goToVoteConfirmPage() {
+            window.location.href = "voteconfirm.html";
+        }
+
+        function toggleLogoutOption() {
+            var logoutOption = document.getElementById("logoutOption");
+            logoutOption.style.display = (logoutOption.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+
+</html>

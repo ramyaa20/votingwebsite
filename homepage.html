@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vote Casting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Brush+Script+MT&display=swap">
+
+    <style>
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+min-height: 100vh;
+            box-sizing: border-box;
+            text-align: left;
+            background-image: url('vote5.png');
+            background-size: cover;
+            body {
+    background-attachment: fixed;
+}
+        }
+
+        header {
+            background-color: #B37A4C;
+            color: #fff;
+            padding: 2px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        header img {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 0 10px 10px 0;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+	    margin-top: 30px;
+        }
+
+        .profile-icon {
+            cursor: pointer;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-icon span {
+            margin-right: 5px;
+        }
+
+       .logout-option {
+            display: none;
+            position: absolute;
+            top: 80px; /* Adjusted position */
+            right: 20px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .logout-option a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            padding: 8px;
+        }
+
+        h1 {
+            margin-top: 90px;
+            margin-bottom: 1px;
+            color: #fff;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 40px;
+        }
+
+        .container {
+            margin: 20px 0 20px 20px;
+            padding: 10px;
+            background-image: url('cont.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            width: 400px;
+            height: 90px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+	.container h2 {
+    margin-top: -10px; /* Adjust the value to move the text up or down */
+}
+
+        .vote-button {
+            margin-left: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #8B4513;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+        }
+
+        .vote-button:hover {
+            background-color: #8B4513;
+            color: #fff;
+            box-shadow: 0 0 10px #8B4513, 0 0 20px #8B4513, 0 0 30px #8B4513;
+        }
+
+        .slideshow-container {
+            position: fixed;
+            top: 150px;
+            right: 5%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            animation: fade 3s ease-out;
+        }
+
+        .slideshow-img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #B37A4C;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .topnav {
+            margin-top: 40px;
+            text-align: center;
+            margin-left:680px;
+        }
+
+        .topnav a {
+            display: inline-block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav-right {
+            float: left;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+.topnav a.active {
+    background-color: #8B4513; /* Set the background color to your desired glow color */
+    color: #fff; /* Set the text color to your desired glow color */
+    box-shadow: 0 0 10px #8B4513, 0 0 20px #8B4513, 0 0 30px #8B4513; /* Glow effect */
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logoumt.png" alt="Logo">
+
+        <div class="topnav">
+            <div class="topnav-right">
+                <a href="homepage.html" class="active">Home</a>
+                <a href="register.html">Registration</a>
+                <a href="review.html">Review</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-icon" onclick="toggleLogoutOption()">
+                <span>&#128100;</span>
+                <span>&#9660;</span>
+            </div>
+            <div class="logout-option" id="logoutOption">
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <h1>Vote Casting</h1>
+    <div class="pad">
+        <div class="container">
+            <h2><br />E-BALLOT FOR MPP</h2><br />
+           <button class="button vote-button" id="voteMPPButton">Vote</button>
+        </div>
+
+        <div class="container">
+            <h2><br />E-BALLOT FOR JPKK</h2><br />
+            <button class="button vote-button" id="voteJPKKButton">Vote</button>
+        </div>
+
+        <div class="container">
+            <h2><br />E-BALLOT FOR JPLK</h2><br />
+            <button class="button vote-button" id="voteJPLKButton">Vote</button>
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="pic0.png" class="slideshow-img" alt="Slide 1">
+        </div>
+
+        <div class="mySlides">
+            <img src="pic2.png" class="slideshow-img" alt="Slide 2">
+        </div>
+
+        <div class="mySlides">
+            <img src="pic3.1.png" class="slideshow-img" alt="Slide 3">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 MarFaRa Company
+    </footer>
+
+<script>
+        function toggleLogoutOption() {
+            var logoutOption = document.getElementById("logoutOption");
+            logoutOption.style.display = (logoutOption.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+    <script>
+        var slideIndex = 0;
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+
+	
+    document.getElementById("voteMPPButton").addEventListener("click", function() {
+        // Redirect to the page you want when the MPP vote button is clicked
+        window.location.href = "mpp.html";
+    });
+
+    document.getElementById("voteJPKKButton").addEventListener("click", function() {
+        // Redirect to the page you want when the JPKK vote button is clicked
+        window.location.href = "jpkk.html";
+    });
+
+    document.getElementById("voteJPLKButton").addEventListener("click", function() {
+        // Redirect to the page you want when the JPLK vote button is clicked
+        window.location.href = "jplk.html";
+    });
+
+	document.addEventListener("DOMContentLoaded", function () {
+    var currentPage = window.location.pathname.split("/").pop(); // Get the current page name
+
+    // Remove "active" class from all links initially
+    var navLinks = document.querySelectorAll(".topnav a");
+    navLinks.forEach(function (link) {
+        link.classList.remove("active");
+    });
+
+    // Add "active" class to the current page link
+    var currentLink = document.querySelector('.topnav a[href="' + currentPage + '"]');
+    if (currentLink) {
+        currentLink.classList.add("active");
+    }
+});
+
+</script>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
